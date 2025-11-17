@@ -2,7 +2,7 @@
 
 const Login = () => {
   return (
-    <div>
+    <div className="max-w-md ">
        Login Page
     </div>
   )
