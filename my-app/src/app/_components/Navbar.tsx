@@ -1,8 +1,12 @@
+
 import Link from "next/link"
 import Logout from "./LogOUTButton";
+import { GetSession } from "@/app/_lib/session";
+const Navbar = async () => {
+        // const session = true;
+          const session = await GetSession();
 
-const Navbar = () => {
-        const session = true;
+        
   return (
              
 
@@ -17,12 +21,15 @@ const Navbar = () => {
               <Link className="text-blue-600 mr-8 font-bold" href="/contact" >
               Contacts
               </Link>
-              <Logout />
+              <Logout  />
+
+
+
         </>
 
 ) : (
             <>
-              <Link className="text-blue-600 mr-5" href="/login" >
+              <Link className="text-blue-600 mr-5 font-bold" href="/login " >
               Login
               </Link>
               <Link className="hover:text-blue-600 mr-5" href="/register" >

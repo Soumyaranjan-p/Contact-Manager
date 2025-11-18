@@ -1,0 +1,31 @@
+import { cookies } from "next/headers";
+import { UserType } from "../_types/user";
+
+//set seeion cookie
+export const setSession=async (user:UserType)=>{
+    (await cookies()).set("session",JSON.stringify(user),{
+        httpOnly:true,
+        secure:process.env.NODE_ENV==='production',
+        maxAge:7*60*60*24,
+        path:"/"
+
+    })
+}
+//GET SESSION COOKIE
+export const GetSession=async (): Promise<UserType | null>=>{
+
+
+    const session =(await cookies()).get("session")?.value;
+    if(!session) return null;
+    const user=JSON.parse(session) as  UserType;
+    return user;
+    
+}
+
+//DELETE SESSION COOKIE
+
+export const deleteCookie= async ()=>{
+    const cookieStore =await cookies();
+    cookieStore.delete("session")
+
+}
