@@ -1,11 +1,10 @@
-
-import { GetSession } from "../_lib/session"
+import { GetSession } from "../_lib/session";
 import { getContacts } from "../api/contact";
 
 import ContactList from "../_components/contactList";
-const Contact = async () => {
 
- const user = await GetSession();
+const Contact = async () => {
+  const user = await GetSession();
 
   // 🔹 If user not logged in
   if (!user) {
@@ -50,10 +49,10 @@ const Contact = async () => {
         </a>
       </div>
 
-      <ContactList  contacts={contacts}/>
+      {/* ❌ Removed action={deleteContactAction} */}
+      <ContactList contacts={contacts} />
     </>
   );
 };
 
-
-export default Contact
+export default Contact;

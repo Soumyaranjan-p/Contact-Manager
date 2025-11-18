@@ -4,6 +4,7 @@ import {ContactType} from "../_types/contact"
 
 import { FiEdit } from "react-icons/fi"
 import Deletebutton from "../_components/deletebutton"
+import { deleteContactAction } from "../actions/contact"
 const contactList = ({contacts}: {contacts: ContactType[]}) => {
   return (
     <div className="space-y-4">
@@ -24,7 +25,7 @@ const contactList = ({contacts}: {contacts: ContactType[]}) => {
                      <FiEdit className="text-blue-600" />
                      Edit
                  </Link>
-                 <Deletebutton contact={contact} />
+                 <Deletebutton action={deleteContactAction}  contact={contact} />
               </div>
           </div>
           
