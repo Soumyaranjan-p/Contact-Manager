@@ -21,7 +21,9 @@ const Navbar = async () => {
               <Link className="text-blue-600 mr-8 font-bold" href="/contact" >
               Contacts
               </Link>
-              <Logout  />
+             < form action={"/logout"}>
+  <button className="cursor-pointer  mr-8 font-bold text-red-700" type="submit">Logout</button>
+</form>
 
 
 
