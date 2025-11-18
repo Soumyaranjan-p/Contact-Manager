@@ -28,9 +28,9 @@ export const UpdateContacts= async(id:string,contact:ContactType)=>{
  return response.data;
 
 }
-export const deleteContacts= async(contact:ContactType)=>{
+export const deleteContacts= async(id:string)=>{
 
- const  response =await axios.post(`${API_URL}/contacts`,contact);
+ const  response =await axios.delete(`${API_URL}/contacts${id}`);
  return response.data;
 
 }
